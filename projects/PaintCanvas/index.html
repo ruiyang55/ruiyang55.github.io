@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+
+		<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+	-->
+	<title>Rui Yang - Drawing Tool</title>
+	
+
+	<link rel="stylesheet" href="page.css">
+	<link rel="stylesheet" href="../page.css">
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Comfortaa:wght@700&family=Nunito:wght@400;800&display=swap" rel="stylesheet">
+
+
+	<!-- P5 Loaded from a CDN -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script> -->
+
+	<!-- Or P5 loaded locally -->
+	<script src="../shared/p5.min.js"></script>
+
+
+	<script src="vector.js"></script>
+	<script src="curve.js"></script>
+
+	<!-- Implement all the tools -->
+	<script src="tools.js"></script>
+
+		<!-- My app's code goes last, 
+			because it needs to refer to things in the previous two JS files -->
+			<script src="app.js"></script>
+
+
+		</head>
+		<body>
+
+			<header>
+				<div class="title">Drawing tool</div>
+				<div class="controls">
+					<!-- navigation things -->
+				</div>
+			</header>
+
+
+			<div id="main">
+				<div id="main-column">
+					<h1>RuiPix</h1>
+					<div id="p5-holder">
+						<!-- Processing gets installed here -->
+					</div>
+
+					<div>
+						<button onclick="tool.clearCanvas(tool.p)">⭕️</button>
+
+						<button onclick="tool.mode='oil'">➡️</button>
+						<button onclick="tool.mode='tree'">🌲</button>
+						<button onclick="tool.mode='epiphany'">🤔</button>
+
+						<div>
+							<!-- <input type="color" id="color0" onchange="tool.color0 = hexToHSL(this.value)"> -->
+							<input type="color" id="color0" onchange="tool.color0 = hexToHSL(this.value)">
+							<input type="color" id="color1" onchange="tool.color1 = hexToHSL(this.value)">
+							<input type="range" min="5" max="100" value="10" class="slider" onchange="tool.size = this.value*.1">
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</body>
+		</html>
